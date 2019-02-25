@@ -1,13 +1,14 @@
-export default function manageCharities(state = { charities: []}, action) {
+export default function manageCharities(state = { loading: false, charities: []}, action) {
     switch (action.type) {
         case 'ADD_CHARITY':
-            return [...state, action.charity]
+            return {...state, charities: action.charity}
 
         case 'LOADING_CHARITIES':
-            return state
+            return {...state, loading: true}
         
         case 'FETCH_CHARITIES':
-            return state
+            console.log(action, action.payload)
+            return {...state, loading: false, charities: action.payload}
 
         default:
             return state

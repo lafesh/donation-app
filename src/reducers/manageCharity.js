@@ -8,7 +8,7 @@ export default function manageCharities(state = { loading: false, charities: []}
         
         case 'FETCH_CHARITIES':
             return {...state, loading: false, charities: action.charities}
-
+            
         default:
             return state
     }

@@ -11,17 +11,18 @@ class CharityContainer extends Component {
   }
 
   render() {
-      debugger
       return (
-          <>
-            <Charities charities={this.props.charities}/>
-          </>
+          <div>
+            {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities}/> : 'Loading'}
+          </div>
+          
+            
       )
   }
 
 }
 
-const mapStateToProps = state => { return {charities: state.charities}}
+const mapStateToProps = ({ charities }) => ({ charities })
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ fetchCharities }, dispatch)

@@ -3,7 +3,6 @@ export function fetchCharities() {
         dispatch({ type: 'LOADING_CHARITIES' })
         return fetch('http://localhost:5000/charities')
         .then(response => response.json())
-        .then((data) => console.log(data))
-        .catch((error) => console.log(error))
+        .then(charities => dispatch({ type: 'FETCH_CHARITIES', charities}))
     }
 }

@@ -7,8 +7,7 @@ export default function manageCharities(state = { loading: false, charities: []}
             return {...state, loading: true}
         
         case 'FETCH_CHARITIES':
-            console.log(action, action.payload)
-            return {...state, loading: false, charities: action.payload}
+            return {...state, loading: false, charities: action.charities}
 
         default:
             return state

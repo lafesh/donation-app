@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { fetchCharities } from '../actions/charityActions'
+import Charities from '../components/Charities'
 
 class CharityContainer extends Component {
     
@@ -10,16 +11,17 @@ class CharityContainer extends Component {
   }
 
   render() {
+      debugger
       return (
           <>
-            <Charities charities={this.props.charities} />
+            <Charities charities={this.props.charities}/>
           </>
       )
   }
 
 }
 
-const mapStateToProps = ({ charities }) => ({ charities })
+const mapStateToProps = state => { return {charities: state.charities}}
 
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({ fetchCharities }, dispatch)

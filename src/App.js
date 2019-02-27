@@ -13,9 +13,9 @@ class App extends Component {
           <h1>You Donate</h1>
         </header>
         <div className="App-body">
-        <CharityContainer />
         <Router>
           <React.Fragment>
+            <Route exact path="/" component={CharityContainer}/> 
             <Route exact path="/donate" component={DonationContainer}/>
           </React.Fragment>
         </Router>   

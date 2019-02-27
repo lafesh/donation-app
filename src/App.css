@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: white
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
@@ -23,6 +28,14 @@
   color: #61dafb;
 }
 
+.donate-btn {
+  background-color: #393f4a;
+  font-size: 1.5vh;
+  border-radius: 25px;
+  padding: 1vh 2vh;
+  margin-bottom: 1vh;
+}
+
 .acc {
   margin: auto;
   width: 40%;
@@ -32,4 +45,21 @@
 
 .acc-item {
   padding: 10px;
+}
+
+.form {
+  padding: 5vh;
+  align-content: left;
+
+}
+
+.form-label {
+  padding: 1vh;
+  font-size: 3vh;
+}
+
+.form-input {
+  margin: 0.5vh 1vh;
+  padding: 1.5vh;
+
 }

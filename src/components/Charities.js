@@ -2,6 +2,7 @@ import React from 'react';
 import '../App.css'
 import { Accordion, AccordionItem } from 'react-light-accordion';
 import 'react-light-accordion/demo/css/index.css';
+import { Link } from 'react-router-dom'
 
 class Charities extends React.Component {
     render() {
@@ -15,9 +16,9 @@ class Charities extends React.Component {
                             <div class="acc-item">
                                 <p>{c.description}</p>
                                 <p>{c.rate} of the donations goes to their mission</p>
-                                <button><a href="/donate">Donate</a></button>
+                                <button className="donate-btn"><Link to="/donate">Donate</Link></button>
                             </div>
-                            </AccordionItem>                     
+                            </AccordionItem>                   
                     )}
                 </Accordion>     
                 </div>

@@ -14,12 +14,9 @@ class CharityContainer extends Component {
       return (
           <div>
             {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities}/> : 'Loading'}
-          </div>
-          
-            
+          </div>           
       )
   }
-
 }
 
 const mapStateToProps = ({ charities }) => ({ charities })

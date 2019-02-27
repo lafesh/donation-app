@@ -12,6 +12,7 @@ class Charities extends React.Component {
                 <div className="acc">
                     <Accordion  atomic={true}>
                     {this.props.charities.map(c => 
+                        
                             <AccordionItem title={c.name}>
                             <div className="acc-item">
                                 <h3>{c.category}</h3>
@@ -19,7 +20,9 @@ class Charities extends React.Component {
                                 <p>{c.rate} of the donations goes to their mission</p>
                                 <button className="btn"><Link to="/donate">Donate</Link></button>
                             </div>
-                            </AccordionItem>                   
+                            </AccordionItem>    
+                       
+                                           
                     )}
                     </Accordion>     
                 </div>

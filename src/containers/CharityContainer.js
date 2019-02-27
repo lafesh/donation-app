@@ -4,7 +4,7 @@ import { fetchCharities } from '../actions/charityActions'
 import Charities from '../components/Charities'
 import NewCharity from '../components/NewCharity'
 //import Button from '../components/Button'
-//import Loading from '../components/Loading'
+import Loading from '../components/Loading'
 
 class CharityContainer extends Component {
     state = {
@@ -16,15 +16,16 @@ class CharityContainer extends Component {
   }
 
   handleClick = event => {
+      debugger
       this.setState({
-          click: true
+          click: !this.state.click
       })
   }
 
   render() {
       return (
           <div>
-            {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities} addCharities={this.props.addCharites} /> : 'Loading'}
+            {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities} /> : <Loading />}
             {this.state.click ? <NewCharity click={this.state.click} /> : <button className="btn" onClick={this.handleClick}>Add Charity</button>}  
           </div>           
       )

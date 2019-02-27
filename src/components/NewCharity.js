@@ -10,7 +10,6 @@ class NewCharity extends Component {
     category: '',
     rate: '',
     pw: '',
-    click: true,
   }
 
   handleOnChange(event) {
@@ -23,13 +22,8 @@ class NewCharity extends Component {
     event.preventDefault();
 
     this.props.addCharity({
-        charity: {
-            name: this.state.name,
-            description: this.state.description,
-            category: this.state.description,
-            rate: this.state.rate,
-            pw: this.state.pw    
-    }})
+        charity: this.state 
+    })
 
     this.setState({
         name: '',
@@ -39,8 +33,6 @@ class NewCharity extends Component {
         pw: '',
         click: false,
     })
-
-    if(!this.state.click) {return <button className="btn">Add Charity</button>}
   }
 
   render() {
@@ -60,15 +52,11 @@ class NewCharity extends Component {
                 <label className="form-label">Admin Password </label>
                 <input className="form-input" type="text" name="pw" value={this.state.pw} onChange={(event) => this.handleOnChange(event)} /><br></br>
             </div>
-            <input className="btn" type="submit" />
-            {/* <Link to={{ pathname: '/charities', state: {fromDashboard: true}}}><input className="btn" type="submit" /></Link> */}
+            <input className="btn" onClick={this.props.hanldeClick} type="submit" />           
         </form>
-        {/* <Charities charities={this.props.charities} /> */}
       </div>
     );
   }
 };
-
-//const mapStateToProps = ({ charities }) => ({ charities })
 
 export default connect(null, { addCharity })(NewCharity);

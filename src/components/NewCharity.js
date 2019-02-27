@@ -21,13 +21,15 @@ class NewCharity extends Component {
 
     fetch('http://localhost:5000/charities', {
         method: 'post',
-        
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
-            name: this.state.name,
-            description: this.state.description,
-            category: this.state.description,
-            rate: this.state.rate,
-            pw: this.state.pw
+            charity: {
+                name: this.state.name,
+                description: this.state.description,
+                category: this.state.description,
+                rate: this.state.rate,
+                pw: this.state.pw   
+            }    
          }) 
     }).then((res) => res.json())
     .then((data) => console.log(data))

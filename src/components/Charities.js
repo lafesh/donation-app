@@ -9,11 +9,12 @@ class Charities extends React.Component {
         return (  
         <div> 
             <h1>Charites Available for Donations</h1>
-                <div class="acc">
+                <div className="acc">
                     <Accordion  atomic={true}>
                     {this.props.charities.map(c => 
-                            <AccordionItem  title={c.name}>
-                            <div class="acc-item">
+                            <AccordionItem title={c.name}>
+                            <div className="acc-item">
+                                <h3>{c.category}</h3>
                                 <p>{c.description}</p>
                                 <p>{c.rate} of the donations goes to their mission</p>
                                 <button className="btn"><Link to="/donate">Donate</Link></button>

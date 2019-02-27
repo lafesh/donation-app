@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import DonationInput from '../components/DonationInput'
+import NewDonation from '../components/NewDonation'
 
 class DonationContainer extends Component {
     
   render() {
       return (
           <div>
-            <DonationInput />
+            <NewDonation />
             {/* paypal component */}
           </div>           
       )

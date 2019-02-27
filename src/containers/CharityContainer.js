@@ -13,7 +13,7 @@ class CharityContainer extends Component {
   render() {
       return (
           <div>
-            {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities}/> : 'Loading'}
+            {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities}  /> : 'Loading'}
           </div>           
       )
   }

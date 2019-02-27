@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css'
 
-class DonationInput extends Component {
+class NewDonation extends Component {
   state = {
     firstname: '',
     lastname: '',
@@ -33,6 +33,7 @@ class DonationInput extends Component {
   render() {
     return (
       <div>
+        <h1>Fill Out the Form to Donate</h1>
         <form className="form" onSubmit={(event) => this.handleOnSubmit(event)}>
             <div className="form-in">
                 <label className="form-label">First Name   </label>
@@ -46,7 +47,8 @@ class DonationInput extends Component {
                 <label className="form-label">CVC  </label>
                 <input className="form-input" type="text" value={this.state.cvc} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Amount in $ </label>
-                <  input className="form-input" type="text" value={this.state.amount} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" value={this.state.amount} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                
             </div>
             
             <input className="btn" type="submit" />
@@ -56,4 +58,4 @@ class DonationInput extends Component {
   }
 };
 
-export default DonationInput;
+export default NewDonation;

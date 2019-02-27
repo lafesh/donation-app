@@ -1,6 +1,6 @@
 export default function manageCharities(state = { loading: false, charities: []}, action) {
     switch (action.type) {
-        case 'ADD_CHARITY':
+        case 'SEND_CHARITY':
             return {...state, charities: action.charity}
 
         case 'LOADING_CHARITIES':

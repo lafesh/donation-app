@@ -8,7 +8,7 @@ class Charities extends React.Component {
     render() {
         return (  
         <div> 
-            <h2>Charites Available for Donations</h2>
+            <h1>Charites Available for Donations</h1>
                 <div class="acc">
                     <Accordion  atomic={true}>
                     {this.props.charities.map(c => 
@@ -20,9 +20,9 @@ class Charities extends React.Component {
                             </div>
                             </AccordionItem>                   
                     )}
-                </Accordion>     
+                    </Accordion>     
                 </div>
-                   
+            <button className="btn"><Link to="/newCharity">Add Charity</Link></button>
         </div>  
         )
     }

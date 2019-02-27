@@ -72,3 +72,7 @@ a {
   color: #282c34;
   font-size: 1.5vh
 }
+
+.header-space {
+  padding: 9vh 0 0 0;
+}

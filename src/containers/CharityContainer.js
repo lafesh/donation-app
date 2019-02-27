@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { fetchCharities } from '../actions/charityActions'
 import Charities from '../components/Charities'
 import NewCharity from '../components/NewCharity'
-import Button from '../components/Button'
+//import Button from '../components/Button'
 //import Loading from '../components/Loading'
 
 class CharityContainer extends Component {

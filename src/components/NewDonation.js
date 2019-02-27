@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css'
+import { Link } from 'react-router-dom'
+
 
 class NewDonation extends Component {
   state = {
@@ -33,25 +35,25 @@ class NewDonation extends Component {
   render() {
     return (
       <div>
-        <h1>Fill Out the Form to Donate</h1>
+        <h1 className="header-space">Fill Out the Form to Donate</h1>
         <form className="form" onSubmit={(event) => this.handleOnSubmit(event)}>
             <div className="form-in">
                 <label className="form-label">First Name   </label>
-                <input className="form-input" type="text" value={this.state.firstname} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="firstname" value={this.state.firstname} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Last Name    </label>
-                <input className="form-input" type="text" value={this.state.lastname} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="lastname" value={this.state.lastname} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Credit Card Number   </label>
-                <input className="form-input" type="text" value={this.state.creditCardNumber} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="creditCardNumber" value={this.state.creditCardNumber} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Expiration Date  </label>
-                <input className="form-input" type="text" value={this.state.expirationDate} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="expirationDate" value={this.state.expirationDate} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">CVC  </label>
-                <input className="form-input" type="text" value={this.state.cvc} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="cvc" value={this.state.cvc} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Amount in $ </label>
-                <input className="form-input" type="text" value={this.state.amount} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="amount" value={this.state.amount} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 
             </div>
             
-            <input className="btn" type="submit" />
+            <Link to='/success'><input className="btn" type="submit" /></Link>
         </form>
       </div>
     );

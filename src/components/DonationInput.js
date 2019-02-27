@@ -7,7 +7,8 @@ class DonationInput extends Component {
     lastname: '',
     creditCardNumber: '',
     expirationDate: '',
-    cvc: ''
+    cvc: '',
+    amount: ''
   }
 
   handleOnChange(event) {
@@ -20,7 +21,12 @@ class DonationInput extends Component {
     event.preventDefault();
     this.props.addRestaurant(this.state.text)
     this.setState({
-      text: ''
+        firstname: '',
+        lastname: '',
+        creditCardNumber: '',
+        expirationDate: '',
+        cvc: '',
+        amount: ''
     })
   }
 
@@ -37,8 +43,10 @@ class DonationInput extends Component {
             <label className="form-label">Expiration Date  </label>
             <input className="form-input" type="text" value={this.state.expirationDate} onChange={(event) => this.handleOnChange(event)} /><br></br>
             <label className="form-label">CVC  </label>
-            <input className="form-input"type="text" value={this.state.cvc} onChange={(event) => this.handleOnChange(event)} /><br></br>
-            <input type="submit" />
+            <input className="form-input" type="text" value={this.state.cvc} onChange={(event) => this.handleOnChange(event)} /><br></br>
+            <label className="form-label">Amount in $ </label>
+            <input className="form-input" type="text" value={this.state.amount} onChange={(event) => this.handleOnChange(event)} /><br></br>
+            <input className="donate-btn" type="submit" />
         </form>
       </div>
     );

@@ -29,11 +29,12 @@ a {
 }
 
 .donate-btn {
-  background-color: #393f4a;
+  background-color: #282c34;
   font-size: 1.5vh;
   border-radius: 25px;
   padding: 1vh 2vh;
   margin-bottom: 1vh;
+  color: white
 }
 
 .acc {
@@ -49,17 +50,12 @@ a {
 
 .form {
   padding: 5vh;
-  align-content: left;
-
 }
 
 .form-label {
-  padding: 1vh;
-  font-size: 3vh;
+  padding-bottom: 1vh
 }
 
 .form-input {
-  margin: 0.5vh 1vh;
-  padding: 1.5vh;
-
+  margin: 0 1vh 1vh 1vh;
 }

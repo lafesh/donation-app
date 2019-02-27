@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css'
+import '../App.css';
+import { connect } from 'react-redux';
+import { addCharity } from '../actions/charityActions'
 
 class NewCharity extends Component {
   state = {
@@ -19,21 +21,14 @@ class NewCharity extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
 
-    fetch('http://localhost:5000/charities', {
-        method: 'post',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            charity: {
-                name: this.state.name,
-                description: this.state.description,
-                category: this.state.description,
-                rate: this.state.rate,
-                pw: this.state.pw   
-            }    
-         }) 
-    }).then((res) => res.json())
-    .then((data) => console.log(data))
-    .catch((err) => console.log(err))
+    this.props.addCharity({
+        charity: {
+            name: this.state.name,
+            description: this.state.description,
+            category: this.state.description,
+            rate: this.state.rate,
+            pw: this.state.pw    
+    }})
 
     this.setState({
         name: '',
@@ -47,7 +42,7 @@ class NewCharity extends Component {
   render() {
     return (
       <div>
-          <h1>Create New Charity</h1>
+        <h1>Create New Charity</h1>
         <form className="form" onSubmit={(event) => this.handleOnSubmit(event)}>
             <div className="form-in">
                 <label className="form-label">Name  </label>
@@ -58,15 +53,15 @@ class NewCharity extends Component {
                 <input className="form-input" type="text" name="category" value={this.state.category} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Percentage that goes directly towards mission  </label>
                 <input className="form-input" type="text" name="rate" value={this.state.rate} onChange={(event) => this.handleOnChange(event)} /><br></br>
-                <label className="form-label">Password </label>
+                <label className="form-label">Admin Password </label>
                 <input className="form-input" type="text" name="pw" value={this.state.pw} onChange={(event) => this.handleOnChange(event)} /><br></br>
             </div>
             
-            <input className="btn" type="submit" />
+            <input className="btn" type="submit"  />
         </form>
       </div>
     );
   }
 };
 
-export default NewCharity;
+export default connect(null, { addCharity })(NewCharity);

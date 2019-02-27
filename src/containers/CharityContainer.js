@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import { fetchCharities } from '../actions/charityActions'
 import Charities from '../components/Charities'
 //import Loading from '../components/Loading'
@@ -14,7 +13,7 @@ class CharityContainer extends Component {
   render() {
       return (
           <div>
-            {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities}  /> : 'Loading'}
+            {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities} addCharities={this.props.addCharites} /> : 'Loading'}
           </div>           
       )
   }
@@ -22,8 +21,4 @@ class CharityContainer extends Component {
 
 const mapStateToProps = ({ charities }) => ({ charities })
 
-const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ fetchCharities }, dispatch)
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CharityContainer);
+export default connect(mapStateToProps, { fetchCharities })(CharityContainer);

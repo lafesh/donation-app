@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
-import Charities from './Charities'
 import { connect } from 'react-redux';
 import { addCharity } from '../actions/charityActions'
-import { Link } from 'react-router-dom'
-
 
 class NewCharity extends Component {
   state = {
@@ -13,6 +10,7 @@ class NewCharity extends Component {
     category: '',
     rate: '',
     pw: '',
+    click: true,
   }
 
   handleOnChange(event) {
@@ -39,13 +37,15 @@ class NewCharity extends Component {
         category: '',
         rate: '',
         pw: '',
+        click: false,
     })
+
+    if(!this.state.click) {return <button className="btn">Add Charity</button>}
   }
 
   render() {
     return (
       <div>
-
         <h1>Create New Charity</h1>
         <form className="form" onSubmit={(event) => this.handleOnSubmit(event)}>
             <div className="form-in">
@@ -69,6 +69,6 @@ class NewCharity extends Component {
   }
 };
 
-const mapStateToProps = ({ charities }) => ({ charities })
+//const mapStateToProps = ({ charities }) => ({ charities })
 
-export default connect(mapStateToProps, { addCharity })(NewCharity);
+export default connect(null, { addCharity })(NewCharity);

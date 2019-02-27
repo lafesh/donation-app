@@ -25,7 +25,7 @@ class CharityContainer extends Component {
       return (
           <div>
             {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities} addCharities={this.props.addCharites} /> : 'Loading'}
-            {this.state.click ? <NewCharity /> : <button className="btn" onClick={this.handleClick}>Add Charity</button>}  
+            {this.state.click ? <NewCharity click={this.state.click} /> : <button className="btn" onClick={this.handleClick}>Add Charity</button>}  
           </div>           
       )
   }

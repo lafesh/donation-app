@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import CharityContainer from './containers/CharityContainer'
 import DonationContainer from './containers/DonationContainer'
+import NewCharity from './components/NewCharity'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
           <React.Fragment>
             <Route exact path="/" component={CharityContainer}/> 
             <Route exact path="/donate" component={DonationContainer}/>
+            <Route exact path="/newCharity" component={NewCharity}/>
           </React.Fragment>
         </Router>   
         </div>

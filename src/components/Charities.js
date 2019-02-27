@@ -16,7 +16,7 @@ class Charities extends React.Component {
                             <div class="acc-item">
                                 <p>{c.description}</p>
                                 <p>{c.rate} of the donations goes to their mission</p>
-                                <button className="donate-btn"><Link to="/donate">Donate</Link></button>
+                                <button className="btn"><Link to="/donate">Donate</Link></button>
                             </div>
                             </AccordionItem>                   
                     )}

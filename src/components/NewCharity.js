@@ -11,7 +11,6 @@ class NewCharity extends Component {
   }
 
   handleOnChange(event) {
-      debugger
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -19,7 +18,7 @@ class NewCharity extends Component {
 
   handleOnSubmit(event) {
     event.preventDefault();
-    //debugger
+
     fetch('http://localhost:5000/charities', {
         method: 'post',
         
@@ -29,7 +28,7 @@ class NewCharity extends Component {
             category: this.state.description,
             rate: this.state.rate,
             pw: this.state.pw
-         })
+         }) 
     }).then((res) => res.json())
     .then((data) => console.log(data))
     .catch((err) => console.log(err))
@@ -50,15 +49,15 @@ class NewCharity extends Component {
         <form className="form" onSubmit={(event) => this.handleOnSubmit(event)}>
             <div className="form-in">
                 <label className="form-label">Name  </label>
-                <input className="form-input" type="text" value={this.state.name} onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="name" value={this.state.name} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Description    </label>
-                <input className="form-input" type="text" onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="description" value={this.state.description} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Category    </label>
-                <input className="form-input" type="text" onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="category" value={this.state.category} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Percentage that goes directly towards mission  </label>
-                <input className="form-input" type="text"  onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="rate" value={this.state.rate} onChange={(event) => this.handleOnChange(event)} /><br></br>
                 <label className="form-label">Password </label>
-                <input className="form-input" type="text"  onChange={(event) => this.handleOnChange(event)} /><br></br>
+                <input className="form-input" type="text" name="pw" value={this.state.pw} onChange={(event) => this.handleOnChange(event)} /><br></br>
             </div>
             
             <input className="btn" type="submit" />

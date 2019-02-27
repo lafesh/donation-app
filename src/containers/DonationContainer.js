@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 import NewDonation from '../components/NewDonation'
 
 class DonationContainer extends Component {

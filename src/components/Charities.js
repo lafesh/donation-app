@@ -23,7 +23,7 @@ class Charities extends React.Component {
                     )}
                     </Accordion>     
                 </div>
-            <button className="btn"><Link to="/newCharity">Add Charity</Link></button>
+            
         </div>  
         )
     }

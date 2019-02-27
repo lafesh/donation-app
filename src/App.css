@@ -55,12 +55,13 @@ a {
 
 .form-in {
   padding: 5vh;
-  background-color: #282c3450;
+  background-color: #282c34;
   margin-bottom: 4vh;
 }
 
 .form-label {
-  padding-bottom: 1vh
+  padding-bottom: 1vh;
+  color: white
 }
 
 .form-input {

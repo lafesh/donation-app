@@ -54,18 +54,20 @@ a {
 }
 
 .form-in {
-  padding: 5vh;
+  padding: 4vh;
   background-color: #282c34;
   margin-bottom: 4vh;
 }
 
-.form-label {
-  padding-bottom: 1vh;
-  color: white
+.form-title {
+  color: white;
 }
 
 .form-input {
-  margin: 0 1vh 1vh 1vh;
+  margin: 1vh 1vh 1vh 1vh;
+  width: 50%;
+  padding: 1vh 1vh;
+  border-radius: 6px
 }
 
 .title {
@@ -75,4 +77,8 @@ a {
 
 .header-space {
   padding: 9vh 0 0 0;
+}
+
+.donation {
+  margin-top: 13vh;
 }

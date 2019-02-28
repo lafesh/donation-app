@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
 import { connect } from 'react-redux';
 import { addCharity } from '../actions/charityActions'
+import CharityForm from './CharityForm'
 
 class NewCharity extends Component {
   state = {
@@ -12,18 +12,20 @@ class NewCharity extends Component {
     pw: '',
   }
 
-  handleOnChange(event) {
+  handleOnChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
-  handleOnSubmit(event) {
+  handleOnSubmit = event => {
     event.preventDefault();
 
     this.props.addCharity({
         charity: this.state 
     })
+
+    this.props.handleClick()
 
     this.setState({
         name: '',
@@ -38,22 +40,7 @@ class NewCharity extends Component {
   render() {
     return (
       <div>
-        <h1>Create New Charity</h1>
-        <form className="form" onSubmit={(event) => this.handleOnSubmit(event)}>
-            <div className="form-in">
-                <label className="form-label">Name  </label>
-                <input className="form-input" type="text" name="name" value={this.state.name} onChange={(event) => this.handleOnChange(event)} /><br></br>
-                <label className="form-label">Description    </label>
-                <input className="form-input" type="text" name="description" value={this.state.description} onChange={(event) => this.handleOnChange(event)} /><br></br>
-                <label className="form-label">Category    </label>
-                <input className="form-input" type="text" name="category" value={this.state.category} onChange={(event) => this.handleOnChange(event)} /><br></br>
-                <label className="form-label">Percentage that goes directly towards mission  </label>
-                <input className="form-input" type="text" name="rate" value={this.state.rate} onChange={(event) => this.handleOnChange(event)} /><br></br>
-                <label className="form-label">Admin Password </label>
-                <input className="form-input" type="text" name="pw" value={this.state.pw} onChange={(event) => this.handleOnChange(event)} /><br></br>
-            </div>
-            <input className="btn" onClick={this.props.hanldeClick} type="submit" />           
-        </form>
+        <CharityForm input={this.state} handleOnChange={this.handleOnChange} handleOnSubmit={this.handleOnSubmit} />
       </div>
     );
   }

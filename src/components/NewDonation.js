@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import '../App.css'
 import DonationForm from './DonationForm'
-
 
 class NewDonation extends Component {
   state = {
@@ -35,8 +33,7 @@ class NewDonation extends Component {
 
   render() {
     return (
-      <div>
-        
+      <div> 
         < DonationForm input={this.state} handleOnChange={this.handleOnChange} handleOnSubmit={this.handleOnSubmit} />
       </div>
     );

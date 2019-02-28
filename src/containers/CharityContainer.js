@@ -16,7 +16,6 @@ class CharityContainer extends Component {
   }
 
   handleClick = event => {
-      debugger
       this.setState({
           click: !this.state.click
       })
@@ -26,7 +25,7 @@ class CharityContainer extends Component {
       return (
           <div>
             {(this.props.charities.length !== 0) ? <Charities charities={this.props.charities} /> : <Loading />}
-            {this.state.click ? <NewCharity click={this.state.click} /> : <button className="btn" onClick={this.handleClick}>Add Charity</button>}  
+            {this.state.click ? <NewCharity handleClick={this.handleClick} /> : <button className="btn" onClick={this.handleClick}>Add Charity</button>}  
           </div>           
       )
   }

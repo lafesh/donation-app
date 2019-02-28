@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import DonationForm from './DonationForm'
+import Form from './Form'
 
 class NewDonation extends Component {
   state = {
-    amount: '',
-    
-    lastname: '',
-    creditCardNumber: '',
-    expirationDate: '',
-    cvc: '',
-    firstname: '',
+    donationAmount: '',
+        nameOnCard: '',
+        creditCardNumber: '',
+        expirationDate: '',
+        cvc: '',
+        billingAddress: '',
+        cityStateZip:''
   }
 
   handleOnChange = event => {
@@ -21,20 +21,21 @@ class NewDonation extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.setState({
-        amount: '',
-        
-        lastname: '',
+        donationAmount: '',
+        nameOnCard: '',
         creditCardNumber: '',
         expirationDate: '',
         cvc: '',
-        firstname: '',
+        billingAddress: '',
+        cityStateZip:''
     })
   }
 
   render() {
     return (
-      <div> 
-        < DonationForm input={this.state} handleOnChange={this.handleOnChange} handleOnSubmit={this.handleOnSubmit} />
+      <div className="form-in"> 
+        <h1 className="form-title">Fill Out the Form to Donate</h1>
+        < Form input={this.state} handleOnChange={this.handleOnChange} handleOnSubmit={this.handleOnSubmit} />
       </div>
     );
   }

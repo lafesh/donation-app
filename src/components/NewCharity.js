@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addCharity } from '../actions/charityActions'
-import CharityForm from './CharityForm'
+import Form from './Form'
 
 class NewCharity extends Component {
   state = {
@@ -39,8 +39,9 @@ class NewCharity extends Component {
 
   render() {
     return (
-      <div>
-        <CharityForm input={this.state} handleOnChange={this.handleOnChange} handleOnSubmit={this.handleOnSubmit} />
+      <div className="form-in">
+        <h1 className="form-title">Create New Charity</h1>
+        <Form input={this.state} handleOnChange={this.handleOnChange} handleOnSubmit={this.handleOnSubmit} />
       </div>
     );
   }

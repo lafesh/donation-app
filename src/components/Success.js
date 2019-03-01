@@ -5,7 +5,7 @@ class Success extends React.Component {
     render () {
         return (
             <>
-                <h1>Thank you for your generous donation!</h1>
+                <h1 className="don">Thank You for Your Generous Donation!</h1>
                 <Link to='/'><button className="btn">Show Charities</button></Link>
             </>
         )

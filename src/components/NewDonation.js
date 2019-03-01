@@ -3,13 +3,13 @@ import Form from './Form'
 
 class NewDonation extends Component {
   state = {
-    donationAmount: '',
-        nameOnCard: '',
-        creditCardNumber: '',
-        expirationDate: '',
-        cvc: '',
-        billingAddress: '',
-        cityStateZip:''
+    donationAmount: 'Donation Amount in $  -  Example 50.25',
+    nameOnCard: 'Cardholder Name',
+    creditCardNumber: 'Credit Card Number',
+    expirationDate: 'Expiration Date  -  mm/yyyy',
+    cvc: 'CVC',
+    billingAddress: 'Billing Address',
+    cityStateZip:'City, State, Zip'
   }
 
   handleOnChange = event => {
@@ -21,13 +21,13 @@ class NewDonation extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     this.setState({
-        donationAmount: '',
-        nameOnCard: '',
-        creditCardNumber: '',
-        expirationDate: '',
-        cvc: '',
-        billingAddress: '',
-        cityStateZip:''
+        donationAmount: 'Donation Amount in $  -  Example 50.25',
+        nameOnCard: 'Cardholder Name',
+        creditCardNumber: 'Credit Card Number',
+        expirationDate: 'Expiration Date  -  mm/yyyy',
+        cvc: 'CVC',
+        billingAddress: 'Billing Address',
+        cityStateZip:'City, State, Zip'
     })
   }
 

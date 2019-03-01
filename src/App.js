@@ -16,11 +16,9 @@ class App extends Component {
         <div className="App-body">
         <Router>
           <React.Fragment>
-            <Route exact path="/" component={CharityContainer}/> 
-            
+            <Route exact path="/" component={CharityContainer}/>  
             <Route exact path="/donate" component={DonationContainer}/>
             <Route exact path="/success" component={Success}/>
-
           </React.Fragment>
         </Router>   
         </div>

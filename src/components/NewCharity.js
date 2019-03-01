@@ -5,11 +5,11 @@ import Form from './Form'
 
 class NewCharity extends Component {
   state = {
-    name: '',
-    description: '',
-    category: '',
-    rate: '',
-    pw: '',
+      name: 'Charity Name',
+      description: 'Description',
+      category: 'Category',
+      rate: 'Direct Percentage that goes to their Mission',
+      pw: 'Admin Password',
   }
 
   handleOnChange = event => {
@@ -28,12 +28,11 @@ class NewCharity extends Component {
     this.props.handleClick()
 
     this.setState({
-        name: '',
-        description: '',
-        category: '',
-        rate: '',
-        pw: '',
-        click: false,
+        name: 'Charity Name',
+        description: 'Description',
+        category: 'Category',
+        rate: 'Direct Percentage that goes to their Mission',
+        pw: 'Admin Password',
     })
   }
 

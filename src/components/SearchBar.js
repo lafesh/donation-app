@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 //import Charities from '../components/Charities'
 
 class SearchBar extends React.Component {
@@ -24,7 +26,7 @@ class SearchBar extends React.Component {
     render() {
          return (
         <>
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.props.handleSubmit}>
                 <input type="text" className="form-input" name="search" value={this.props.search} placeholder="Search Charity" onChange={this.props.handleChange} />
                 <input type="submit" className="btn" value="Search" />
             </form>

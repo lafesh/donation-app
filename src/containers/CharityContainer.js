@@ -31,6 +31,7 @@ class CharityContainer extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    
     this.setState({
       charities: this.props.charities.filter(c => c.name.toLowerCase().includes(this.state.search.toLowerCase())),
       search: ''
@@ -42,10 +43,7 @@ class CharityContainer extends Component {
           <div>
             <h1>Charites Available for Donations</h1>
             <SearchBar search={this.state.search} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
-            {(this.props.charities.length === 0) ? <Loading /> : <Charities charities={this.props.charities} /> } 
-            
-            {/* <SearchBar allCharities={this.props.charities} /> */}
-            
+            {(this.props.charities.length === 0) ? <Loading /> : <Charities charities={(this.state.charities.length === 0 ? this.props.charities : this.state.charities)} /> }            
             {this.state.click ? <NewCharity handleClick={this.handleClick} /> : <button className="btn" onClick={this.handleClick}>Add Charity</button>}  
           </div>           
       )

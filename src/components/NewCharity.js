@@ -8,7 +8,7 @@ class NewCharity extends Component {
       name: 'Charity Name',
       description: 'Description',
       category: 'Category',
-      rate: 'Direct Percentage that goes to their Mission',
+      rate: 'Direct Percentage that goes to their Cause',
       pw: 'Admin Password',
   }
 
@@ -31,7 +31,7 @@ class NewCharity extends Component {
         name: 'Charity Name',
         description: 'Description',
         category: 'Category',
-        rate: 'Direct Percentage that goes to their Mission',
+        rate: 'Direct Percentage that goes to their Cause',
         pw: 'Admin Password',
     })
   }

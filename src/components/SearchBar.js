@@ -1,28 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
-//import Charities from '../components/Charities'
 
 class SearchBar extends React.Component {
-    // state = {
-    //     search: '',
-    //     charities: []
-    // }
-
-    // handleChange = (event) => {
-    //     this.setState({
-    //       search: event.target.value
-    //     })
-    //   }
-    
-    //   handleSubmit = (event) => {
-    //     event.preventDefault();
-    //     this.setState({
-    //       charities: this.props.allCharities.filter(c => c.name.toLowerCase().includes(this.state.search.toLowerCase())),
-    //       search: ''
-    //     })
-    //   }
-
     render() {
          return (
         <>
@@ -31,11 +9,9 @@ class SearchBar extends React.Component {
                 <input type="submit" className="btn" value="Search" />
             </form>
 
-            {/* {this.state.charities.length > 0 ? <Charities charities={this.state.charities} /> : null } */}
         </>
-    )
-    }
-   
+        )
+    }  
 }
 
 export default SearchBar

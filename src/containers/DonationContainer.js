@@ -14,5 +14,4 @@ class DonationContainer extends Component {
   }
 }
 
-
 export default connect()(DonationContainer);

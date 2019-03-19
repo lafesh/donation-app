@@ -9,7 +9,7 @@ export function fetchCharities() {
     }
 }
 
-export function addCharity(charity) {
+export function addCharity(charity) {  
     return (dispatch) => {
         fetch('http://localhost:5000/charities', {
         method: 'post',
@@ -17,9 +17,10 @@ export function addCharity(charity) {
         body: JSON.stringify( charity) 
     }).then(handleErrors)
     .then(res => res.json())
-    .then(charity => dispatch({ type: 'ADD_CHARITY', charity}))
+    .then(charity =>{ dispatch({ type: 'ADD_CHARITY', charity })})
     .catch(console.log)
     } 
+
 }
 
 function handleErrors(response) {

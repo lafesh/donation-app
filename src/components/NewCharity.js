@@ -20,11 +20,9 @@ class NewCharity extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-
-    this.props.addCharity({
-        charity: this.state 
-    })
-
+     this.props.addCharity({
+         charity: this.state 
+     })
     this.props.handleClick()
 
     this.setState({

@@ -10,7 +10,8 @@ class CharityContainer extends Component {
     state = {
         click: false,
         search: '',
-        charities: []
+        charities: [],
+        allCharities: []
     }
     
   componentDidMount() {
@@ -30,12 +31,25 @@ class CharityContainer extends Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
-    
+    event.preventDefault();  
     this.setState({
       charities: this.props.charities.filter(c => c.name.toLowerCase().includes(this.state.search.toLowerCase())),
       search: ''
     })
+  }
+
+  setCharities = () => {
+    this.setState({
+      charities: [...this.props.charities].sort(function compare(a, b) {
+        if (a.name.toUpperCase() < b.name.toUpperCase()) {
+          return -1
+        }
+        if (a.name.toUpperCase() > b.name.toUpperCase()) {
+          return 1
+        }
+        return 0
+      })
+    })  
   }
 
   render() {
@@ -43,6 +57,7 @@ class CharityContainer extends Component {
           <div>
             <h1>Charites Available for Donations</h1>
             <SearchBar search={this.state.search} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+            <button className="btn" onClick={this.setCharities}>Sort Charities</button>
             {(this.props.charities.length === 0) ? <Loading /> : <Charities charities={(this.state.charities.length === 0 ? this.props.charities : this.state.charities)} /> }            
             {this.state.click ? <NewCharity handleClick={this.handleClick} /> : <button className="btn" onClick={this.handleClick}>Add Charity</button>}  
           </div>           
